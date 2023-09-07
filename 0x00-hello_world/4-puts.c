@@ -1,8 +1,9 @@
 #include <stdio.h>
 /**
- * First C Program 
- * */
-
+ * main - A print-f program using shell scripts
+ *
+ * Return: 0 (Success)
+ */
 int main(void)
 {
 	char *message = "\"Programming is like building a multilingual puzzle";
