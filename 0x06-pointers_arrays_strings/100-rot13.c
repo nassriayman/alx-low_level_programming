@@ -1,36 +1,32 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * rot13 - compares two strings.
- * @str: source string
- * Return: pointer to the resulting string dest
+ * rot13 - encoder rot13
+ * @s: pointer to string params
+ *
+ * Return: *s
  */
-char *rot13(char *str)
-{
-	int i, j;
-	int temp;
-	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	for (i = 0; str[i] != '\0'; i++)
+char *rot13(char *s)
+{
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
 		{
-			if (str[i] == a[j] && j < 26)
+			if (s[i] == data1[j])
 			{
-				str[i] = str[i] + 13;
-				temp = str[i] - ('Z' + 1);
-				str[i] = 'A' + temp;
-				break;
-			}
-			else
-			{
-				str[i] = str[i] + 13;
-				temp = str[i] - ('z' + 1);
-				str[i] = 'a' + temp;
+				s[i] = datarot[j];
 				break;
 			}
 		}
 	}
-
-	return str;
+	return (s);
 }
+
+
